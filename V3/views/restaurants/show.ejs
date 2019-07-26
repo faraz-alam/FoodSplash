@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<h1><%= restaurant.name %></h1>
+
+<img src="<%= restaurant.image %>">
+
+<p><%= restaurant.description %></p>
+
+<% restaurant.comments.forEach(function(comment){ %>
+	<p>
+		<strong><%= comment.author %></strong> - <%= comment.text %>
+	</p>
+<% }); %>
+	<p>
+		<a class="btn btn-success" href="/restaurants/<%= restaurant._id %>/comments/new">Add Comment</a>
+	</p>
+
+<% include ../partials/footer %>
